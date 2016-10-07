@@ -20,6 +20,7 @@
 		}
 		$Text="$LD - $Type"+":"+" $Message"
 
+		Write-Host "$Text"
 		add-Content -Path $Log -Value $Text
 
 	}
