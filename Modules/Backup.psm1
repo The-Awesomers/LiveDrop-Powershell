@@ -68,7 +68,7 @@
 			robocopy $Backup $BackupDir /e /b /B /sec /log:"$RLog"
 		}
 		if ($7z) {
-			sz a -mx=9 "$BackupDir" "$ZipName"
+			sz a -mx=9 "$ZipName" "$BackupDir"
 		} else {
 			Write-Host "7z not detected. No compression."
 		}
