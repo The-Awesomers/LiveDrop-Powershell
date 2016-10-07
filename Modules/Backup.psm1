@@ -2,8 +2,6 @@
 	#Variables
 	$bDirs="C:\Users"
 	$Log="Log.txt"
-	#Robocopy Log
-	$RLog="RLog.txt"
 
 
 	#Hard Variables - Do not change
@@ -65,7 +63,7 @@
 
 		foreach ($Backup in $Dirs) {
 			Log "INFO" "Backing up $Backup"
-			robocopy $Backup $BackupDir /e /b /B /sec /log:"$RLog"
+			robocopy $Backup $BackupDir /e /b /B /sec /log+:"$Log" /tee /ts
 		}
 		if ($7z) {
 			sz a -mx=9 "$ZipName" "$BackupDir"
