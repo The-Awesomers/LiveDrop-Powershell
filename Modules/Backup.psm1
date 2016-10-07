@@ -64,7 +64,7 @@
 		foreach ($Backup in $Dirs) {
 			$RoboDir="$BackupDir" +"\"+ (Get-Item "$Backup").Directory.Name
 			Log "INFO" "Backing up $Backup"
-			robocopy $Backup $BackupDir /e /b /B /sec /log+:"$Log" /tee /ts
+			robocopy $Backup $RoboDir /e /b /B /sec /log+:"$Log" /tee /ts
 		}
 		if ($7z) {
 			sz a -mx=3 "$ZipName" "$BackupDir"
