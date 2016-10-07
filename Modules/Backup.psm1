@@ -62,7 +62,7 @@
 		
 
 		foreach ($Backup in $Dirs) {
-			$RoboDir=(Get-Item "$Backup").Directory.Name
+			$RoboDir=(Split-Path $Backup -Leaf)
 			Log "INFO" "Backing up $Backup in $RoboDir"
 			robocopy $Backup $RoboDir /e /b /B /sec /log+:"$Log" /tee /ts
 		}
