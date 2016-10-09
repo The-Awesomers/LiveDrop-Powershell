@@ -64,7 +64,7 @@
 		foreach ($Backup in $Dirs) {
 			$RoboDir=(Split-Path $Backup -Leaf)
 			Log "INFO" "Backing up $Backup in $RoboDir"
-			robocopy $Backup $RoboDir /e /b /B /sec /log+:"$Log" /tee /ts
+			robocopy $Backup $RoboDir /e /b /B /sec /NP /log+:"$Log" /tee /ts
 		}
 		if ($7z) {
 			sz a -mx=3 "$ZipName" "$BackupDir"
