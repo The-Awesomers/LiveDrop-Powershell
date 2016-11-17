@@ -5,6 +5,9 @@ If ( $start -ne "y" ) {exit}
 
 $sourdir = Read-Host -Prompt "What partition(s) would you like to image? [Format: X:,Y:,Z:] "
 $allcrit = Read-Host -Prompt "Are operating system files located on the specified partition(s)? (y/N) "
-$destdir = Read-Host -Prompt "Where would you like the image stored? [Format: X:]"
+$destdir = Read-Host -Prompt "Where would you like the image stored? [Format: X:\pathname]"
 
+$logpath = get-date -UFormat '%a_%d_%b_%Y_%T(%Z)' | foreach {$_ -replace ":", "."}
 
+echo "wbAdmin start backup -backupTarget:$destdir -include:$sourcedir -allCritical | Out-File $destdir\WindowsImageBackup\$logpath.txt
+"
