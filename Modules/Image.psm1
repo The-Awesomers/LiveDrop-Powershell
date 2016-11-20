@@ -29,3 +29,7 @@ Else {echo "Process cannot be executed. Please review previous parameters." $log
 
 
 # Lucas Brown #
+
+<# The Scriptis not currently at the fully functional level, but I am working on getting it there.
+As of now, the local drive capture and save should work properly. I am still working on the shared/remote save,
+as well as finalizing how logging is to be done. I think I can use Start-/Stop-Transcript, but I am still looking into it.#>
