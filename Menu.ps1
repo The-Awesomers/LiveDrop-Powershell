@@ -1,4 +1,4 @@
-﻿﻿$xAppName    = "LiveDrop Menu"
+﻿$xAppName    = "LiveDrop Menu"
 [BOOLEAN]$global:xExitSession=$false
 function LoadMenuSystem(){
 	[INT]$xMenu1=0
@@ -74,8 +74,7 @@ function LoadMenuSystem(){
 				}
 			}
 			Switch ($xMenu2){
-				1{ Write-Host "`n`tYou Selected Option 1 – Import-Module `n"{Import-Module .\Modules\Image.psm1} -Fore Yellow;start-Sleep -Seconds 3 
-                Start-Process powershell -verb runas -Argumentlist -file .\Modules\Image.psm1}
+				1{ Write-Host "`n`tYou Selected Option 1  `n" -Fore Yellow;start-Sleep -Seconds 3 ;  .\Modules\Image.ps1}
 				default { Write-Host "`n`tYou Selected Option 2 – Quit`n" -Fore Yellow; break} 
 			}
 		}
