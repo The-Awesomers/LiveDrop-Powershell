@@ -1,4 +1,4 @@
-﻿$xAppName    = "LiveDrop Menu"
+$xAppName    = "LiveDrop Menu"
 [BOOLEAN]$global:xExitSession=$false
 function LoadMenuSystem(){
 	[INT]$xMenu1=0
@@ -56,7 +56,7 @@ function LoadMenuSystem(){
 				Write-Host "`tPlease select one of the options available.`n" -Fore Red;start-Sleep -Seconds 1
 			}
 			Switch ($xMenu2){
-				1{ Write-Host "`n`tYou Selected Option 1 – Import Module`n" {Import-Module .\Modules\Update.psm1} -Fore Yellow;start-Sleep -Seconds 3; Update }
+				1{ Write-Host "`n`tYou Selected Option 1`n" -Fore Yellow;start-Sleep -Seconds 3; .\Modules\Brian.bat  }
                 
 				default { Write-Host "`n`tYou Selected Option 2 – Quit`n" -Fore Yellow; break}
 			}
