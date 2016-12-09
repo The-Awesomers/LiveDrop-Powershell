@@ -36,8 +36,9 @@ function LoadMenuSystem(){
 			}
 			Switch ($xMenu2){
 				
-                1{ Write-Host "`n`tYou Selected Option 1 – Import-module`n"{Import-module.\Modules\Backup.psm1} -Fore Yellow;start-Sleep -Seconds 3 }
-				default { Write-Host "`n`tYou Selected Option 2 – Quit the Administration Tasks`n" -Fore Yellow; break}
+                1{ Write-Host "`n`tYou Selected Option 1 – Import-module`n"{Import-module .\Modules\Backup.psm1} -Fore Yellow;start-Sleep -Seconds 3; Backup C:\BackupFolder C:\Intel }
+                
+				Default { Write-Host "`n`tYou Selected Option 2 – Quit the Administration Tasks`n" -Fore Yellow; break}
 				
 			}
 		}
@@ -55,7 +56,8 @@ function LoadMenuSystem(){
 				Write-Host "`tPlease select one of the options available.`n" -Fore Red;start-Sleep -Seconds 1
 			}
 			Switch ($xMenu2){
-				1{ Write-Host "`n`tYou Selected Option 1 – Import Module`n" {Import Module .\Modules\Update.psm1} -Fore Yellow;start-Sleep -Seconds 3 }
+				1{ Write-Host "`n`tYou Selected Option 1 – Import Module`n" {Import-Module .\Modules\Update.psm1} -Fore Yellow;start-Sleep -Seconds 3; Update }
+                
 				default { Write-Host "`n`tYou Selected Option 2 – Quit`n" -Fore Yellow; break}
 			}
 		}
@@ -72,7 +74,8 @@ function LoadMenuSystem(){
 				}
 			}
 			Switch ($xMenu2){
-				1{ Write-Host "`n`tYou Selected Option 1 – Import-Module `n"{Import Module .\Modules\Image.psm1} -Fore Yellow;start-Sleep -Seconds 3 }
+				1{ Write-Host "`n`tYou Selected Option 1 – Import-Module `n"{Import-Module .\Modules\Image.psm1} -Fore Yellow;start-Sleep -Seconds 3 
+                Start-Process powershell -verb runas -Argumentlist -file .\Modules\Image.psm1}
 				default { Write-Host "`n`tYou Selected Option 2 – Quit`n" -Fore Yellow; break} 
 			}
 		}
